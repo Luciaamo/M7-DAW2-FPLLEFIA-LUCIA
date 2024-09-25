@@ -48,7 +48,25 @@ $ciudades = [
 ];
 
 foreach ($ciudades as $ciudad => $pais){
-    echo "La ciudad de $ciudad está en $pais";
+
+    if($ciudad == 'Barcelona'){
+        echo "La ciudad de $ciudad está en $pais";
+    }
+    
+}
+
+//foreach en arrays multidimensionales
+//Crear un array multidimensional de estudiantes y sus notas, y recorre cada estudiante con foreach para mostrar sus datos.
+$estudiantes = [
+    ["nombre" => "Anna", "nota" => 10],
+    ["nombre" => "Dani", "nota" => 10],
+    ["nombre" => "Yehor", "nota" => 11],
+    ["nombre" => "Dídac", "nota" => 19],
+    ["nombre" => "David", "nota" => 12],
+];
+
+foreach($estudiantes as $estudiante){
+    echo "El estudiante: {$estudiante["nombre"]} ha sacado un {$estudiante['nota']}";
 }
 
 

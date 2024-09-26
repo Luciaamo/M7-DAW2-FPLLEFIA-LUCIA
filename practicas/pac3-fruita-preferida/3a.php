@@ -325,6 +325,15 @@
     ];
 
     foreach ($idols as $idol){
+     echo '<div class="col-md-4 mb-4">
+                <div class="card-body">
+                    <img src="' . $idol['imatge'] . '" class="card-img-top" alt="' . $idol['nom_cognoms'] . '">
+                    <div class="card-body">
+                        <h5 class="card-title">' . $idol['nom_cognoms'] . '</h5>
+                        <p class="card-text">' . $idol['descripcio'] . '</p>
+                    </div>
+                </div>
+            </div>';
     }
 
 ?>

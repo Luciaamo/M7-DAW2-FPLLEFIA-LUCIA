@@ -318,26 +318,26 @@
 
 
 <?php
-    $idols = [
+  
+    foreach ($idols as $idol){ 
+
+    }
+ 
+    ?>
+
+
+
+
+
+$idols = [
         "imatge" => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg/640px-BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg",
         "nom_cognoms" => "Billie Eilish",
         "descripcio" => "Billie Eilish és la meva ídola per diverses raons que la fan destacar al món de la música i la cultura pop. La seva autenticitat i vulnerabilitat a les lletres de les seves cançons ressonen profundament, tocant temes com la salut mental, l'autoacceptació i les experiències personals. A més, el seu estil únic i la seva estètica innovadora la diferencien d'altres artistes i la converteixen en un referent de la generació jove."
-    ];
-
-    foreach ($idols as $idol){
-     echo '<div class="col-md-4 mb-4">
-                <div class="card-body">
-                    <img src="' . $idol['imatge'] . '" class="card-img-top" alt="' . $idol['nom_cognoms'] . '">
-                    <div class="card-body">
-                        <h5 class="card-title">' . $idol['nom_cognoms'] . '</h5>
-                        <p class="card-text">' . $idol['descripcio'] . '</p>
-                    </div>
-                </div>
-            </div>';
-    }
-
-?>
+]
 
 </body>
 
 </html>
+
+
+

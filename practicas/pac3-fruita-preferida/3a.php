@@ -317,13 +317,17 @@
   </footer>
 
 
-<?php
-  
-    foreach ($idols as $idol){ 
-
-    }
- 
-    ?>
+<?php foreach ($idols as $idol): ?>
+    <div class="col-md-4">
+      <div class="card mb-4">
+          <img src="<?php echo $idol['imatge']; ?>" class="card-img-top" alt="<?php echo $idol['nom']; ?>">
+          <div class="card-body">
+              <h5 class="btn btn-sm btn-outline-secondary"><?php echo $idol['nom']; ?></h5>
+              <p class="card-text"><?php echo $idol['descripcio']; ?></p>
+          </div>
+      </div>
+    </div> 
+<?php endforeach; ?>
 
 
 

@@ -81,7 +81,11 @@
 
   <main>
 
-  "<div class="col">
+<?php
+
+foreach ($idols as $idol)
+
+'"<div class="col">
          "<div class="card shadow-sm">
               "<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
                 "aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">"
@@ -99,10 +103,15 @@
                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                   </div>
                   <small class="text-muted">9 mins</small>
-            </div>
+                </div>
+              </div>
           </div>
-        </div>
-      </div>"
+  </div>"'
+
+
+
+?>
+
 
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
@@ -120,10 +129,7 @@
 
     <div class="album py-5 bg-light">
       <div class="container">
-<?php 
-  
-      
-?>
+
 
 
         </div>
@@ -190,15 +196,6 @@ $idols = [
         "descripcio" => "Sia es la meva ídola per la seva veu poderosa i única, combinada amb les seves lletres profundes i emocionals, la converteixen en una artista excepcional. A més, la seva autenticitat i vulnerabilitat en compartir les seves experiències de vida, incloent la seva lluita contra l'ansietat i la depressió, inspiren molts a ser més oberts i acceptar les seves pròpies lluites."
   ]
   ];
-
-  <?php
-    foreach($idols as $idol){
-
-    }
-  ?>
-
-
-
 
 
 </body>

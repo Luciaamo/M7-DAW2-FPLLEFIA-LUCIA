@@ -81,43 +81,7 @@
 
   <main>
 
-    
-        
-          
 
-
-<?php
-
-foreach($idols as $idol){
-    echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                  dy=".3em">Thumbnail</text>
-              </svg>
-
-              <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>'    
-
-}
-          
-          
-?>
 
 
 <section class="py-5 text-center container">
@@ -132,26 +96,14 @@ foreach($idols as $idol){
           </p>
         </div>
       </div>
-    </section>
+</section>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
-
-  </main>
-
-  <footer class="text-muted py-5">
-    <div class="container">
-      <p class="float-right mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
-          href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
-    </div>
-  </footer>
+   
 
 
-  $idols = [
+<?php
+
+$idols = [
   [
         "imatge" => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg/640px-BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg",
         "nom_cognoms" => "Billie Eilish",
@@ -180,12 +132,12 @@ foreach($idols as $idol){
   [
         "imatge" => "https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FArchivo%3AAva_Max_-_Untold_2023_%252853113549967%2529_%2528cropped%2529.jpg&psig=AOvVaw2_SMuw2eH9zl6rvbRYqe_j&ust=1727964822102000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCtsefw74gDFQAAAAAdAAAAABAK",
         "nom_cognoms" => "Ava Max",
-        "descripcio" => "Ava Max, es la meva ídola perquè és una artista amb un estil únic i una veu poderosa que destaca en l'escena del pop. Ha aconseguit èxits internacionals amb cançons com "Sweet but Psycho" i "Kings & Queens", transmetent missatges de confiança, empoderament i autenticitat."
+        "descripcio" => "Ava Max, es la meva ídola perquè és una artista amb un estil únic i una veu poderosa que destaca en l'escena del pop. Ha aconseguit èxits internacionals amb cançons com Sweet but Psycho i Kings & Queens, transmetent missatges de confiança, empoderament i autenticitat."
   ],
   [
         "imatge" => "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bbc.com%2Fmundo%2Fnoticias-45344939&psig=AOvVaw3wPK71L-AdeeV8MPyegt85&ust=1727965192317000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjIy4_y74gDFQAAAAAdAAAAABAE",
         "nom_cognoms" => "Michael Jackson",
-        "descripcio" => "per la seva gran influència en la música, el ball i la cultura pop. Amb una carrera impressionant des de petit, va revolucionar la indústria amb el seu estil únic, cançons icòniques com "Thriller" i coreografies inoblidables."
+        "descripcio" => "per la seva gran influència en la música, el ball i la cultura pop. Amb una carrera impressionant des de petit, va revolucionar la indústria amb el seu estil únic, cançons icòniques com Thriller i coreografies inoblidables."
   ],
   [
         "imatge" => "https://www.google.com/url?sa=i&url=https%3A%2F%2Fplus.cusica.com%2F2017%2F12%2F15%2Fescucha-nuevo-disco-eminem%2F&psig=AOvVaw1dgy0yVHrjlBYlvl7nePt2&ust=1727965033128000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjt68fx74gDFQAAAAAdAAAAABAE",
@@ -197,8 +149,56 @@ foreach($idols as $idol){
         "nom_cognoms" => "Sia",
         "descripcio" => "Sia es la meva ídola per la seva veu poderosa i única, combinada amb les seves lletres profundes i emocionals, la converteixen en una artista excepcional. A més, la seva autenticitat i vulnerabilitat en compartir les seves experiències de vida, incloent la seva lluita contra l'ansietat i la depressió, inspiren molts a ser més oberts i acceptar les seves pròpies lluites."
   ]
-  ];  
+  ];
+
+foreach($idols as $idol){
+echo '<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+              aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+              <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                    dy=".3em">Thumbnail</text>
+            </svg>
+
+          <div class="card-body">
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>';
+
+}       
+        
+?>
+
+
+</main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-right mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a
+          href="/docs/5.0/getting-started/introduction/">getting started guide</a>.</p>
+    </div>
+  </footer>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>  
 
 </body>
-
 </html>

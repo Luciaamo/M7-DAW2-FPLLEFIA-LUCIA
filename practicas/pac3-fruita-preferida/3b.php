@@ -1,3 +1,34 @@
+<?php
+$fruites = [
+    [
+        'nom' => 'Manzana',
+        'imatge' => 'https://example.com/manzana.jpg',
+        'descripcio' => '¡Esta es tu fruta favorita!'
+    ],
+    [
+        'nom' => 'Plátano',
+        'imatge' => 'https://img.freepik.com/vector-gratis/racimo-platano-amarillo-maduro-vector-aislado-sobre-fondo-blanco_1284-45456.jpg',
+        'descripcio' => 'No seleccionada.'
+    ],
+    [
+        'nom' => 'Naranja',
+        'imatge' => 'https://e7.pngegg.com/pngimages/187/615/png-clipart-orange-fruit-orange-tangerine-orange-natural-foods-food-thumbnail.png',
+        'descripcio' => 'No seleccionada.'
+    ],
+    [
+        'nom' => 'Fresa',
+        'imatge' => 'https://static.vecteezy.com/system/resources/previews/024/596/055/non_2x/strawberry-strawberry-with-transparent-background-transparent-strawberry-ai-generated-free-png.png',
+        'descripcio' => 'No seleccionada.'
+    ],
+    [
+        'nom' => 'Kiwi',
+        'imatge' => 'https://e7.pngegg.com/pngimages/166/911/png-clipart-kiwi-kiwi.png',
+        'descripcio' => 'No seleccionada.'
+    ],
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

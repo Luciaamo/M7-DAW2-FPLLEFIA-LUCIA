@@ -81,32 +81,46 @@
 
   <main>
 
+    
+        
+          
+
+
 <?php
 
-foreach ($idols as $idol){}
+foreach($idols as $idol){
+    echo '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                  dy=".3em">Thumbnail</text>
+              </svg>
 
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>'    
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          
+          
 ?>
 
 
-    <section class="py-5 text-center container">
+<section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="font-weight-light">Album example</h1>
@@ -123,12 +137,6 @@ foreach ($idols as $idol){}
     <div class="album py-5 bg-light">
       <div class="container">
 
-
-
-        </div>
-      </div>
-    </div>
-
   </main>
 
   <footer class="text-muted py-5">
@@ -142,7 +150,8 @@ foreach ($idols as $idol){}
     </div>
   </footer>
 
-$idols = [
+
+  $idols = [
   [
         "imatge" => "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg/640px-BillieEilishO2160622_%2819_of_45%29_%2852153214339%29_%28cropped_3%29.jpg",
         "nom_cognoms" => "Billie Eilish",
@@ -188,12 +197,8 @@ $idols = [
         "nom_cognoms" => "Sia",
         "descripcio" => "Sia es la meva ídola per la seva veu poderosa i única, combinada amb les seves lletres profundes i emocionals, la converteixen en una artista excepcional. A més, la seva autenticitat i vulnerabilitat en compartir les seves experiències de vida, incloent la seva lluita contra l'ansietat i la depressió, inspiren molts a ser més oberts i acceptar les seves pròpies lluites."
   ]
-  ];
-
+  ];  
 
 </body>
 
 </html>
-
-
-

@@ -33,12 +33,9 @@ foreach ($persones as $persona) {
     echo "<div style='border: 1px solid #000; padding: 10px; margin: 10px; width: 200px;'>";
     echo "<img src='" . $persona['foto'] . "' alt='Foto de " . $persona['nom'] . "' style='width:150px;height:150px;'><br>";
     echo "<strong>" . $persona['nom'] . "</strong><br>";
-    echo "<form action='fitxa.php' method='GET'>";
     echo "<input type='hidden' name='index' value='" . $index . "'>";
     echo "<button type='submit'>Més informació</button>";
-    echo "</form>";
     echo "</div>";
-
 }
 
 ?>

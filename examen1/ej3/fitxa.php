@@ -29,17 +29,4 @@ $persones = [
 
 $index = $_GET['index'];
 
-if (isset($persones[$index])) {
-    $persona = $persones[$index];
-    echo "<h1>Fitxa de " . $persona['nom'] . "</h1>";
-    echo "<img src='" . $persona['foto'] . "' alt='Foto de " . $persona['nom'] . "' style='width:150px;height:150px;'><br>";
-    echo "<strong>Nom: </strong>" . $persona['nom'] . "<br>";
-    echo "<strong>Telèfon: </strong>" . $persona['telefon'] . "<br>";
-    echo "<strong>Correu electrònic: </strong>" . $persona['correu'] . "<br>";
-    echo "<strong>Edat: </strong>" . $persona['edat'] . "<br>";
-    echo "<strong>Professió: </strong>" . $persona['professio'] . "<br>";
-} else {
-    echo "<p>No s'ha trobat la persona.</p>";
-}
-
 ?>

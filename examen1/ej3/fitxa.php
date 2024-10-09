@@ -27,18 +27,19 @@ $persones = [
     ],
 ];
 
-echo "<h1>Llista de Persones</h1>";
+$index = $_GET['index'];
 
-foreach ($persones as $persona) {
-    echo "<div style='border: 1px solid #000; padding: 10px; margin: 10px; width: 200px;'>";
+if (isset($persones[$index])) {
+    $persona = $persones[$index];
+    echo "<h1>Fitxa de " . $persona['nom'] . "</h1>";
     echo "<img src='" . $persona['foto'] . "' alt='Foto de " . $persona['nom'] . "' style='width:150px;height:150px;'><br>";
-    echo "<strong>" . $persona['nom'] . "</strong><br>";
-    echo "<form action='fitxa.php' method='GET'>";
-    echo "<input type='hidden' name='index' value='" . $index . "'>";
-    echo "<button type='submit'>Més informació</button>";
-    echo "</form>";
-    echo "</div>";
-
+    echo "<strong>Nom: </strong>" . $persona['nom'] . "<br>";
+    echo "<strong>Telèfon: </strong>" . $persona['telefon'] . "<br>";
+    echo "<strong>Correu electrònic: </strong>" . $persona['correu'] . "<br>";
+    echo "<strong>Edat: </strong>" . $persona['edat'] . "<br>";
+    echo "<strong>Professió: </strong>" . $persona['professio'] . "<br>";
+} else {
+    echo "<p>No s'ha trobat la persona.</p>";
 }
 
 ?>

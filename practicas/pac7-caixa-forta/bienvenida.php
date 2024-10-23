@@ -20,7 +20,7 @@
         "text_color" => "#946B2D",
         "welcome_message" => "Intel·ligència, creativitat i saviesa. Benvingut a Ravenclaw!",
         "message_background" => "#5D5D5D",
-        "image" => "ravenclaw.jpg"
+        "image" => "ravenclaw.png"
         ],
         "Slytherin" => [
         "background_color" => "#1A472A",

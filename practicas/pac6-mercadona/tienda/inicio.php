@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Mercadona</title>
-    <!-- link css bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhFtAU6auU8tT94WrHftJbDrCEXSU1oBoqyl2QvZJiW3" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,42 +32,28 @@
 </div>
 
 <div class="container">
-    <form action="index.php" method="POST">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="apellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" name="apellidos" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="telefono" class="form-label">Número de Teléfono</label>
-            <input type="tel" class="form-control" id="telefono" name="telefono" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="dni" class="form-label">DNI</label>
-            <input type="text" class="form-control" id="dni" name="dni" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="codigo" class="form-label">Código de Socio</label>
-            <input type="text" class="form-control" id="codigo" name="codigo" required>
-        </div>
-        
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    <div class="form-container mx-auto" style="max-width: 600px;">
+        <form action="index.php" method="POST">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Número de Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="foto" class="form-label">URL de la Foto de Perfil:</label>
+                <input type="url" class="form-control" id="foto" name="foto" required>
+            </div>
+            
+            <button type="submit" class="btn btn-custom btn-block">Enviar</button>
+        </form>
+    </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OmhuP+IlRH9sENB0oLrn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

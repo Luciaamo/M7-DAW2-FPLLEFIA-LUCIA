@@ -5,7 +5,7 @@ function mostrarHeader($nombre = '', $foto = '') {
     echo '<header class="navbar navbar-expand-lg navbar-light bg-light mb-5">';
     echo '<div class="container-fluid">';
     echo '<a class="navbar-brand" href="#">';
-    echo '<img src="assets/logo-mercadona.jpg" alt="logo-mercadona" style="height: 50px;">';
+    echo '<img src="../data/assets/logo-mercadona.jpg" alt="logo-mercadona" style="height: 50px;">';
     echo '</a>';
     
     if (!empty($nombre) && !empty($foto)) {

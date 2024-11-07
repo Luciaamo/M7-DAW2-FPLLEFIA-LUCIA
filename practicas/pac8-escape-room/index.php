@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -33,12 +35,8 @@
 
 <?php
 
-session_start();
-
-$_SESSION['room'] = 1;
-
 $endevinalles = [
-    
+
     'facil' => [
         ['pregunta' => "Quin ratolí famós va ser creat per Walt Disney?", 'resposta' => "Mickey Mouse"],
         ['pregunta' => "Qui és el millor amic de Bob Esponja?", 'resposta' => "Patricio"],

@@ -1,3 +1,19 @@
+
+<?php
+
+session_start();
+
+$_SESSION['username'] = 'Lucía';
+
+$_SESSION['dificultat'] = 'facil';
+
+echo "<h1>Benvingut, " . $_SESSION['username'] . " <h1>";
+echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +25,7 @@
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="width: 22rem;">
         <h2 class="card-title text-center">Habitación 1</h2>
-        <p class="card-text">Endevinalla: Tengo ciudades, pero no casas. Tengo montañas, pero no árboles. Tengo agua, pero no peces. ¿Qué soy?</p>
+        <p class="card-text">Endevinalla: </p>
         <form method="POST">
             <div class="mb-3">
                 <input type="text" name="answer" class="form-control" required placeholder="Respuesta">

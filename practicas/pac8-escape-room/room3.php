@@ -1,11 +1,5 @@
-<?php
 
-session_start();
 
-echo "<h1>Benvinguda " . $_SESSION['username'] . " <h1>";
-echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
-
-?>
 
 
 
@@ -15,12 +9,12 @@ echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Habitación 1</title>
+    <title>Habitación 3</title>
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="width: 22rem;">
-        <h2 class="card-title text-center">Habitación 1</h2>
-        <p class="card-text">Endevinalla: Quin animal fa miaow?</p>
+        <h2 class="card-title text-center">Habitación 3</h2>
+        <p class="card-text">Endevinalla: Quin és l’únic satèl·lit natural de la Terra?</p>
         <form method="POST">
             <div class="mb-3">
                 <input type="text" name="answer" class="form-control" required placeholder="Respuesta">

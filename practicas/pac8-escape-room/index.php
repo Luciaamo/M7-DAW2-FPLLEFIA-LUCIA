@@ -1,13 +1,17 @@
-
-
 <?php 
 
 session_start();
 
-$_SESSION['username'] = $_GET['username'];
+if(isset($_GET['username'])){
+    $_SESSION['username'] = $_GET['username'];
+    $_SESSION['dificultat'] = $_GET['dificultat'];
 
-$_SESSION['dificultat'] = $_GET['dificultat'];
-
+    header('Location: room1.php');
+    exit;
+}
+else{
+    echo'No se ha enviado nada';
+}
 
 ?>
 
@@ -45,10 +49,3 @@ $_SESSION['dificultat'] = $_GET['dificultat'];
     </div>
 </body>
 </html>
-
-
-<?php
-
-
-
-?>

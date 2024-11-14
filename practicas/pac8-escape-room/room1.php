@@ -3,9 +3,10 @@
 session_start();
 
 
-
 echo "<h1>Benvinguda " . $_SESSION['username'] . " <h1>";
 echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
+
+
 
 ?>
 
@@ -22,7 +23,7 @@ echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="width: 22rem;">
         <h2 class="card-title text-center">Habitación 1</h2>
-        <p class="card-text">Endevinalla: Quin animal fa miaow?</p>
+        <p class="card-text">Quin animal fa miaow?</p>
         <form method="POST">
             <div class="mb-3">
                 <input type="text" name="answer" class="form-control" required placeholder="Respuesta">

@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_GET['username'])){
+if(isset($_SESSION['username'])){
     $_SESSION['username'] = $_GET['username'];
     $_SESSION['dificultat'] = $_GET['dificultat'];
 
@@ -14,9 +14,6 @@ else{
 }
 
 ?>
-
-
-
 
 
 <!DOCTYPE html>

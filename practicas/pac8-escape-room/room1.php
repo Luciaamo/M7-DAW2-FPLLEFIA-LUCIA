@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 echo "<h1>Benvinguda " . $_SESSION['username'] . " <h1>";
 echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
 

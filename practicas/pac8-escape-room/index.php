@@ -2,16 +2,14 @@
 
 session_start();
 
-if(isset($_SESSION['username'])){
-    $_SESSION['username'] = $_GET['username'];
-    $_SESSION['dificultat'] = $_GET['dificultat'];
 
-    header('Location: room1.php');
-    exit;
-}
-else{
-    echo'No se ha enviado nada';
-}
+$_SESSION['username'] = ($_POST['username']);
+$_SESSION['dificultat'] = ($_POST['dificultat']);
+
+
+
+header('Location: room1.php');
+exit;
 
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-// Array multidimensional amb les endevinalles organitzades per nivell
+
 $endevinalles = [
     'facil' => [
         [
@@ -9,6 +9,10 @@ $endevinalles = [
         [
             'pregunta' => 'Quin és el color del cel en un dia clar?',
             'resposta' => 'blau'
+        ],
+        [
+            'pregunta' => 'Quin animal fa oink?',
+            'resposta' => 'porc'
         ]
     ],
     'mig' => [
@@ -19,6 +23,10 @@ $endevinalles = [
         [
             'pregunta' => 'Quin és el primer mes de l’any?',
             'resposta' => 'gener'
+        ],
+        [
+            'pregunta' => 'Quin és l’element químic amb símbol O?',
+            'resposta' => 'oxigen'
         ]
     ],
     'dificil' => [
@@ -29,6 +37,10 @@ $endevinalles = [
         [
             'pregunta' => 'Quin planeta és conegut com el Planeta Vermell?',
             'resposta' => 'mart'
+        ],
+        [
+            'pregunta' => 'Quina és la capital d’Austràlia?',
+            'resposta' => 'canberra'
         ]
     ]
 ];

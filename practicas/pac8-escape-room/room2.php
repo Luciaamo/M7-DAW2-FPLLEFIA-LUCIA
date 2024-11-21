@@ -1,6 +1,32 @@
 <?php
 
-echo "<h1>Hola otra vez, " . $_SESSION['username'] . " </h1>";
+session_start();
+
+require_once('preguntes.php');
+
+if (!isset($_SESSION['current_room']) || $_SESSION['current_room'] != 2) {
+    header('Location: index.php');
+    exit;
+}
+
+
+$nivel = $_SESSION['dificultat'];
+$pregunta = $endevinalles[$nivel][1]['pregunta'];
+$respostaCorrecta = $endevinalles[$nivel][1]['resposta'];
+$message = '';
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $respostaUsuari = $_POST['answer'];
+
+    if (strtolower(trim($respostaUsuari)) == strtolower($respostaCorrecta)) {
+        $_SESSION['current_room'] = 3;
+        header('Location: room3.php');
+        exit;
+    } else {
+        $message = "<div class='alert alert-danger mt-3'>Respuesta incorrecta. ¡Inténtalo de nuevo!</div>";
+    }
+}
 
 
 ?>
@@ -16,14 +42,14 @@ echo "<h1>Hola otra vez, " . $_SESSION['username'] . " </h1>";
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="width: 22rem;">
         <h2 class="card-title text-center">Habitación 2</h2>
-        <p class="card-text">Endevinalla: Quin animal pot volar i no és un ocell?</p>
+        <p class="card-text"><?= $pregunta ?></p>
         <form method="POST">
             <div class="mb-3">
                 <input type="text" name="answer" class="form-control" required placeholder="Respuesta">
             </div>
             <button type="submit" class="btn btn-success w-100">Enviar</button>
         </form>
-        <?= $message; ?> <!-- Muestra el mensaje de éxito o error -->
+        <?= $message ?>
     </div>
 </body>
 </html>

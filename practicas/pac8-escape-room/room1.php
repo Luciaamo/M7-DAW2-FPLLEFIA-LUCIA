@@ -2,32 +2,31 @@
 
 session_start();
 
-if (!isset($_SESSION['room']) || $_SESSION['room'] != 1) {
+require_once('preguntes.php');
+
+
+if (!isset($_SESSION['current_room']) || $_SESSION['current_room'] != 1) {
     header('Location: index.php');
     exit;
 }
 
-$message = "";
+$nivel = $_SESSION['dificultat'];
+$pregunta = $endevinalles[$nivel][0]['pregunta'];
+$respostaCorrecta = $endevinalles[$nivel][0]['resposta'];
+$message = '';
 
-// Procesar la respuesta del formulario
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $respuesta = trim($_GET['resposta']); // Recoger la respuesta del usuario
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $respostaUsuari = $_POST['answer'];
 
-    // La respuesta correcta para esta habitación
-    $respuestaCorrecta = "mapa"; // Ajusta según tu enigma
-
-    if (strcasecmp($respuesta, $respuestaCorrecta) == 0) {
-        // Si la respuesta es correcta, avanzar a la siguiente habitación
-        $message ="<div class='alert alert-success mt-3'>¡Felicidades! ¡Has completado el juego!</div>";
-        $_SESSION['room'] = 2; // Cambiar a la siguiente habitación
-        header('Location: room2.php'); // Redirigir a room2.php
+    if (strtolower(trim($respostaUsuari)) == strtolower($respostaCorrecta)) {
+        $message = "<div class='alert alert-danger mt-3'>¡Felicidades! ¡Has completado el juego!</div>";
+        $_SESSION['current_room'] = 2;
+        header('Location: room2.php');
         exit;
     } else {
-        // Si la respuesta es incorrecta, mostrar un mensaje de error
         $message = "<div class='alert alert-danger mt-3'>Respuesta incorrecta. ¡Inténtalo de nuevo!</div>";
     }
 }
-
 
 ?>
 
@@ -44,14 +43,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4" style="width: 22rem;">
         <h2 class="card-title text-center">Habitación 1</h2>
-        <p class="card-text">Quin animal fa miaow?</p>
+        <p class="card-text"><?= $pregunta ?></p>
         <form method="POST">
             <div class="mb-3">
                 <input type="text" name="answer" class="form-control" required placeholder="Respuesta">
             </div>
             <button type="submit" class="btn btn-success w-100">Enviar</button>
         </form>
-        <?= $message; ?> <!-- Muestra el mensaje de éxito o error -->
+        <?= $message ?>
     </div>
 </body>
 </html>

@@ -3,19 +3,15 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $_SESSION['name'] = $_POST['username'];
-    $_SESSION['level'] = $_POST['dificultat'];
-    $_SESSION['room'] = 1;
+    $_SESSION['username'] = $_GET['username'];
+    $_SESSION['dificultat'] = $_GET['dificultat'];
+
 
     header('Location: room1.php');
     exit;
+
 }
-
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ca">

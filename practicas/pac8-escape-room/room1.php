@@ -2,9 +2,31 @@
 
 session_start();
 
-echo "<h1>Benvinguda " . $_SESSION['username'] . " <h1>";
-echo "<p>Nivell de dificultat: " . $_SESSION['dificultat'] . " </p>";
+if (!isset($_SESSION['room']) || $_SESSION['room'] != 1) {
+    header('Location: index.php');
+    exit;
+}
 
+$message = "";
+
+// Procesar la respuesta del formulario
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $respuesta = trim($_GET['resposta']); // Recoger la respuesta del usuario
+
+    // La respuesta correcta para esta habitación
+    $respuestaCorrecta = "mapa"; // Ajusta según tu enigma
+
+    if (strcasecmp($respuesta, $respuestaCorrecta) == 0) {
+        // Si la respuesta es correcta, avanzar a la siguiente habitación
+        $message ="<div class='alert alert-success mt-3'>¡Felicidades! ¡Has completado el juego!</div>";
+        $_SESSION['room'] = 2; // Cambiar a la siguiente habitación
+        header('Location: room2.php'); // Redirigir a room2.php
+        exit;
+    } else {
+        // Si la respuesta es incorrecta, mostrar un mensaje de error
+        $message = "<div class='alert alert-danger mt-3'>Respuesta incorrecta. ¡Inténtalo de nuevo!</div>";
+    }
+}
 
 
 ?>

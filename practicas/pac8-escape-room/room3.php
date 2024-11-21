@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = "<div class='alert alert-success mt-3'>¡Felicidades! Has completado el juego.</div>";
         session_destroy();
         header('Location: index.php');
+        exit;
     } else {
         $message = "<div class='alert alert-danger mt-3'>Respuesta incorrecta. ¡Inténtalo de nuevo!</div>";
     }

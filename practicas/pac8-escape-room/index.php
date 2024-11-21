@@ -2,9 +2,11 @@
 
 session_start();
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $_SESSION['username'] = $_GET['username'];
     $_SESSION['dificultat'] = $_GET['dificultat'];
+    //$_SESSION['current_room'] = 1;
 
 
     header('Location: room1.php');

@@ -1,31 +1,43 @@
 <?php
-session_start();
-require_once 'Llibre.php';
-require_once 'Biblioteca.php';
+session_start(); // Inicia la sessió per mantenir la informació entre les sol.licituds
+require_once 'Llibre.php'; // Requerix la classe Llibre
+require_once 'Biblioteca.php'; // Requereix la classe Biblioteca
 
-// Inicialitzar la biblioteca en la sessió
+// Inicialitza la biblioteca a la sessió si no existeix ja 
 if (!isset($_SESSION['biblioteca'])) {
-    $_SESSION['biblioteca'] = serialize(new Biblioteca());
+    $_SESSION['biblioteca'] = serialize(new Biblioteca()); // Serialitza un nou objecte Biblioteca i el guarda a la sessió
 }
 
-$biblioteca = unserialize($_SESSION['biblioteca']);
+$biblioteca = unserialize($_SESSION['biblioteca']); // Deserialitza l'objecte Biblioteca de la sessió
 
-// Afegir un llibre
+// Lógica per afegir un llibre
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['afegir'])) {
+    // Rep les dades del formulari d'afegir el llibre
     $titol = $_POST['titol'];
     $autor = $_POST['autor'];
     $any = $_POST['any'];
     $foto = $_POST['foto'];
 
+    // Crea un nou objecte llibre amb les dades rebudes
+
     $nouLlibre = new Llibre($titol, $autor, $any, $foto);
+
+    // Afegeix el llibre a la biblioteca
+
     $biblioteca->afegirLlibre($nouLlibre);
+
+    // Guarda la biblioteca actualitzada a la sessió
     $_SESSION['biblioteca'] = serialize($biblioteca);
 }
 
-// Cercar llibres
-$resultatsCerca = [];
+// Lógica per cercar llibres
+$resultatsCerca = []; // Array per emmagatzemar els resultats de la cerca
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cercar'])) {
+
+    // Rep el text de cerca del formulari 
     $textCerca = $_POST['textCerca'];
+
+    // Realitza la cerca de llibres
     $resultatsCerca = $biblioteca->cercarLlibre($textCerca);
 }
 ?>
@@ -73,9 +85,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cercar'])) {
         <button type="submit" name="cercar" class="btn btn-secondary">Cercar llibre</button>
     </form>
 
-    <!-- Visualització de llibres -->
+    <!-- Visualització dels llibres disponibles -->
     <h2>Llibres disponibles</h2>
     <div class="row">
+        <!-- Recorre tots els llibres de la biblioteca i els mostra en targetes -->
         <?php foreach ($biblioteca->mostrarLlibres() as $llibre): ?>
             <div class="col-md-4 mb-3">
                 <div class="card">
@@ -93,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cercar'])) {
     <?php if (!empty($resultatsCerca)): ?>
         <h2>Resultats de la cerca</h2>
         <div class="row">
+            <!-- Mostra els llibres trobats a la cerca -->
             <?php foreach ($resultatsCerca as $llibre): ?>
                 <div class="col-md-4 mb-3">
                     <div class="card">

@@ -1,43 +1,52 @@
 <?php
-require_once 'classes/baraja.class.php';
-require_once 'classes/jugador.class.php';
 
-// Captura dades del formulari
-$num_jugadors = $_POST['num_jugadors'] ?? 0;
-$num_cartes = $_POST['num_cartes'] ?? 0;
+include_once 'classes/carta.class.php';
+include_once 'classes/baraja.class.php';
+include_once 'classes/jugador.class.php';
+include_once 'classes/partida.class.php';
 
-if ($num_jugadors > 0 && $num_cartes > 0) {
-    $baralla = new Baraja();
-    $baralla->crea_baraja();
-    $baralla->mezcla();
+session_start();
 
-    $jugadors = [];
-    for ($i = 1; $i <= $num_jugadors; $i++) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Crear els jugadors i iniciar la partida
+    $partida = new Partida($_POST['numero_jugadores'], $_POST['numero_cartas']);
+    for ($i = 0; $i < $_POST['numero_jugadores']; $i++) {
         $jugador = new Jugador($i);
-        for ($j = 0; $j < $num_cartes; $j++) {
-            $jugador->afegir_carta(array_pop($baralla->conjunto_cartas));
+        // Afegir cartes a cada jugador
+        for ($j = 0; $j < $_POST['numero_cartas']; $j++) {
+            $jugador->afegir_carta($partida->baraja->conjunto_cartas[0]);
+            array_shift($partida->baraja->conjunto_cartas);  // Treure la carta de la baralla
         }
-        $jugadors[] = $jugador;
+        $partida->array_jugadores[] = $jugador;
     }
-
-    $carta_mesa = array_pop($baralla->conjunto_cartas);
+    $_SESSION['partida'] = serialize($partida);
 }
+
+// Mostrar la partida
+$partida = unserialize($_SESSION['partida']);
+$partida->jugar();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joc UNO</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <h1>Partida UNO</h1>
+    <br>
     <h2>Carta inicial sobre la taula:</h2>
-    <?= $carta_mesa->pinta_carta(); ?>
+    
+    <!-- <?= $carta_mesa->pinta_carta(); ?>
     <h2>Mans dels jugadors:</h2>
     <?php foreach ($jugadors as $jugador): ?>
         <h3>Jugador <?= $jugador->id ?>:</h3>
         <?= $jugador->mostrar_ma(); ?>
-    <?php endforeach; ?>
+    <?php endforeach; ?>  -->
+
 </body>
 </html>

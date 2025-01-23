@@ -1,7 +1,8 @@
 <?php
 
+
 class Jugador {
-    
+
     public $mano = [];
     public $id;
 
@@ -9,26 +10,26 @@ class Jugador {
         $this->id = $id;
     }
 
+    // Afegir una carta a la mà del jugador
     public function afegir_carta($carta) {
         $this->mano[] = $carta;
     }
 
+    // Eliminar una carta de la mà del jugador
     public function eliminar_carta($carta) {
-        foreach ($this->mano as $key => $c) {
-            if ($c->palo === $carta->palo && $c->numero === $carta->numero) {
-                unset($this->mano[$key]);
-                break;
-            }
+        $index = array_search($carta, $this->mano);
+        if ($index !== false) {
+            unset($this->mano[$index]);
         }
-
-        $this->mano = array_values($this->mano);
     }
 
+    // Mostrar les cartes del jugador
     public function mostrar_ma() {
         foreach ($this->mano as $carta) {
             echo $carta->pinta_carta();
         }
     }
 }
+
 
 ?>

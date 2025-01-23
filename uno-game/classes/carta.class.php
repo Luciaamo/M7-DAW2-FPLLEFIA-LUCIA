@@ -1,6 +1,7 @@
 <?php
 
 class Carta {
+    
     public $palo;
     public $numero;
 
@@ -10,7 +11,7 @@ class Carta {
     }
 
     public function pinta_carta() {
-        return "<img src='images/cartas_uno/{$this->palo}_{$this->numero}.png' alt='{$this->palo} {$this->numero}' />";
+        return "<img src='../images/cartas_uno/{$this->palo}_{$this->numero}.png' alt='{$this->palo} {$this->numero}'/>";
     }
 
     public function pinta_carta_link() {
@@ -18,7 +19,7 @@ class Carta {
     }
 
     public function pinta_carta_girada() {
-        return "<img src='images/cartas_uno/carta_girada.png' alt='Carta girada' />";
+        return "<img src='../images/cartas_uno/carta_girada.png' alt='Carta girada'/>";
     }
 
 }
